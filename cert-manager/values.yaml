@@ -1,0 +1,5 @@
+---
+# https://github.com/helm/helm-www/blob/main/content/en/docs/chart_template_guide/subcharts_and_globals.md
+cert-manager:
+  installCRDs: true
+

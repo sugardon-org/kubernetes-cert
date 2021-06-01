@@ -1,0 +1,10 @@
+---
+# https://github.com/helm/helm-www/blob/main/content/en/docs/topics/charts.md#the-chartyaml-file
+apiVersion: v2
+name: cert-manager
+version: 0.0.1
+type: application
+dependencies:
+  - name: cert-manager
+    version: 1.3.1
+    repository: https://charts.jetstack.io
