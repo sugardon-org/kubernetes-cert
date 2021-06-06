@@ -9,7 +9,7 @@ spec:
   source:
     directory:
       recurse: false
-    path: cert-manager-configration/overlays/sugardon01
+    path: cert-manager-configuration/overlays/sugardon01
     repoURL: https://github.com/sugardon-org/kubernetes-cert
     targetRevision: main
   destination:
