@@ -1,0 +1,23 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cert-manager-configuration
+  namespace: dummy
+spec:
+  project: default
+  source:
+    directory:
+      recurse: false
+    path: cert-manager-configration/overlays/sugardon01
+    repoURL: https://github.com/sugardon-org/kubernetes-cert
+    targetRevision: main
+  destination:
+    namespace: cert-manager
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false
+    syncOptions:
+      - CreateNamespace=true
