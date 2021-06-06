@@ -11,6 +11,7 @@ spec:
   secretName: sugardon-com-tls
   dnsNames:
     - sugardon.com
+    - "*.sugardon.com"
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
