@@ -1,4 +1,30 @@
 ---
+# Staging
+# https://cert-manager.io/docs/configuration/acme/
+# example doc
+# https://www.ibm.com/docs/ja/cpfs?topic=cmcm-using-acme-issue-certificates
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-staging
+spec:
+  acme:
+    email: sugar2don@gmail.com
+    # https://letsencrypt.org/docs/staging-environment/
+    server: https://acme-staging-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: letsencrypt-staging
+    solvers:
+      - dns01:
+          cloudflare:
+            # https://cert-manager.io/docs/configuration/acme/dns01/cloudflare/
+            email: sugar2don@gmail.com
+            apiTokenSecretRef:
+              name: cloudflare-token-cert-manager01
+              key: api-token
+
+---
+# Production
 # https://cert-manager.io/docs/configuration/acme/
 # example doc
 # https://www.ibm.com/docs/ja/cpfs?topic=cmcm-using-acme-issue-certificates
@@ -9,10 +35,7 @@ metadata:
 spec:
   acme:
     email: sugar2don@gmail.com
-    # use prod
-    # https://letsencrypt.org/docs/staging-environment/
-    server: https://acme-staging-v02.api.letsencrypt.org/directory
-    #server: https://acme-v02.api.letsencrypt.org/directory
+    server: https://acme-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
       name: letsencrypt-prod
     solvers:
