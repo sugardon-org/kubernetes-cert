@@ -7,4 +7,5 @@ namespace: cert-manager
 resources:
   - ../../base
   - clusterissuer.yaml
-  - certificate.yaml
+  # Certificate is depend on namespace
+  # - certificate.yaml
