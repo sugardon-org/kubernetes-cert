@@ -8,4 +8,4 @@ resources:
   - ../../base
   - clusterissuer.yaml
   # Certificate is depend on namespace
-  # - certificate.yaml
+  - certificate.yaml
